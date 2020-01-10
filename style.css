@@ -1,7 +1,7 @@
 body, html{
     margin: 0;
     padding: 0;
-    background-color: lightcoral;
+    background-color: rgb(255, 77, 77);
 }
 
 h1{
@@ -34,7 +34,7 @@ h1, h2, h3{
 }
 
 .titlecontainer{
-    background-color: lightcoral;
+    background-color: rgb(255, 77, 77);
     height: 100px;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -45,9 +45,8 @@ h1, h2, h3{
 }
 
 .passwordcontainer{
-    background-color: lightcoral;
+    background-color: rgb(255, 77, 77);
     width: 100%;
-    padding-bottom: 300px;
 }
 
 .passwordbox{
@@ -58,6 +57,7 @@ h1, h2, h3{
     padding-bottom: 100px;
     margin-top: 25px;
     background-color: black;
+    color: white;
 }
 
 .createpasswordbutton{
@@ -78,12 +78,12 @@ h1, h2, h3{
 }
 
 footer{
-    background-color: lightcoral;
+    background-color: rgb(255, 77, 77);
     position: fixed; 
     bottom: 0;
     left: 0;
     right: 0;
-    height: 8%;
+    height: 10%;
     border-style: solid;
     border-left: 0;
     border-right: 0;
@@ -94,4 +94,21 @@ footer{
     text-align: center;
     font-family: 'Geo', sans-serif;
     font-size: 25px;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.portfolio{
+    text-align: center;
+    font-family: 'Geo', sans-serif;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+a{
+    color: white;
+}
+
+a:hover, .buttontext:hover, .copybutton:hover{
+    color: lightskyblue;
 }
