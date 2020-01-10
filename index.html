@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,63 +8,114 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
-   <div> <h1>password generator</h1> </div> 
-   <div>
-       <h2>generate password</h2> 
-       <textarea rows="4" cols="50"></textarea>
-       <button>gererate password</button>
+    <div>
+        <h1>password generator</h1>
+    </div>
+    <div>
+        <h2>generate password</h2>
+        <textarea id="passwordBox" rows="4" cols="50"></textarea>
+        <button onclick="myFunction()">gererate password</button>
+        <button onclick="">copy to clipboard</button>
 
-       <script>
-       
-       var lowerCaseArray = [
-           "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
-           "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x",
-           "y", "z"];
+        <script>
 
-        var upperCaseArray = [
-            "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
-            "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
-            "Y", "Z"];
+            //var array = [
+                "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
+                "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x",
+                "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
+                "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
+                "Y", "Z", "!", "@", "£", "$", "%", "^", "&", "*", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-        var numberArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            var lowerCaseArray = [
+                "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
+                "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x",
+                "y", "z"];
 
-        var specialArray = ["!", "@", "£", "$", "%", "^", "&", "*"];
+            var upperCaseArray = [
+                "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
+                "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
+                "Y", "Z"];
 
+            var numberArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-       var lowerCase = confirm("would you like to use lower case letters in your password?"); 
+            var specialArray = ["!", "@", "£", "$", "%", "^", "&", "*"];
 
-        if (lowerCase){
-            alert("lower case letters now being used");
-        }
-        else alert("ok, no problem. how about upper case letters?");
+            function generateNewPassword() {
 
+                var lowerCase = confirm("would you like to use lower case letters in your password?");
 
-        var upperCase = confirm("would you like to use upper case letters in your password?");
-
-        if (upperCase){
-        alert("upper case letters now being used")
-        }
-        else alert("ok, no problem. how about numbers?")
-
-
-        var numbers = confirm("would you like to use numbers in your password?");
-
-        if (numbers){
-        alert("numbers now being used")
-        }
-        else alert("ok, no problem. how about special characters?")
+                if (lowerCase) {
+                    alert("lower case letters now being used");
+                }
+                else alert("ok, no problem. how about upper case letters?");
 
 
-        var special = confirm("would you like to use special characters in your password?");
+                var upperCase = confirm("would you like to use upper case letters in your password?");
 
-        if (upperCase){
-        alert("special characters now being used")
-        }
-        else alert("ok, no problem. your random password is now set!")
-        
-       </script>
-   </div>
+                if (upperCase) {
+                    alert("upper case letters now being used")
+                }
+                else alert("ok, no problem. how about numbers?")
+
+
+                var numbers = confirm("would you like to use numbers in your password?");
+
+                if (numbers) {
+                    alert("numbers now being used")
+                }
+                else alert("ok, no problem. how about special characters?")
+
+
+                var special = confirm("would you like to use special characters in your password?");
+
+                if (upperCase) {
+                    alert("special characters now being used")
+                }
+                else alert("ok, no problem. your random password is now set!")
+
+            };
+
+
+            function generatePassword() {
+                var length = 8,
+                    charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+                    retVal = "";
+                for (var i = 0, n = charset.length; i < length; ++i) {
+                    retVal += charset.charAt(Math.floor(Math.random() * n));
+                }
+                return retVal;
+            }
+
+            function myFunction() {
+                document.getElementById("passwordBox").innerHTML = shuffle(array);
+
+            }
+
+            function shuffle(array) {
+                var currentIndex = array.length, temporaryValue, randomIndex;
+
+                // While there remain elements to shuffle...
+                while (0 !== currentIndex) {
+
+                    // Pick a remaining element...
+                    randomIndex = Math.floor(Math.random() * currentIndex);
+                    currentIndex -= 1;
+
+                    // And swap it with the current element.
+                    temporaryValue = array[currentIndex];
+                    array[currentIndex] = array[randomIndex];
+                    array[randomIndex] = temporaryValue;
+                }
+
+                return array;
+            }
+            console.log(shuffle(array));
+
+        </script>
+    </div>
 
 </body>
+
 </html>
