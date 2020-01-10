@@ -24,7 +24,7 @@
         <button onclick="generateNewPassword()" class="createpasswordbutton">
             <h2 class="buttontext">Create Password <i class="fas fa-lock"></i></h2>
         </button>
-        <button class="copybutton">
+        <button onclick="clipboard()" class="copybutton">
             <h2 class="buttontext">Copy to clipboard <i class="far fa-copy"></i></h2>
         </button>
     </div>
@@ -158,6 +158,23 @@
             return array;
         }
         console.log(shuffle(array));
+
+
+
+        function clipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("passwordBox");
+
+  /* Select the text field */
+  copyText.select(); 
+  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
 
     </script>
 
