@@ -20,7 +20,9 @@
     <div class="passwordcontainer">
         <h3><i class="fas fa-arrow-down"></i> To begin, please click the 'Create Password' button below <i
                 class="fas fa-arrow-down"></i> </h3>
-        <input type="text" disabled="disabled" class="passwordbox" id="passwordBox" placeholder="YOUR PASSWORD WILL BE DISPLAYED HERE">
+        <!-- change to a div -->
+        <input type="text" disabled="disabled" class="passwordbox" id="passwordBox"
+            placeholder="YOUR PASSWORD WILL BE DISPLAYED HERE">
         <button onclick="generateNewPassword()" class="createpasswordbutton">
             <h2 class="buttontext">Create Password <i class="fas fa-lock"></i></h2>
         </button>
@@ -35,149 +37,7 @@
             <a href="https://jamesdavies1.github.io/Portfolio/index.html" target="_blank">here</a></p>
     </footer>
 
-    <script>
-
-        var array = [
-            "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
-            "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x",
-            "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
-            "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
-            "Y", "Z", "!", "@", "£", "$", "%", "^", "&", "*", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-        var lowerCaseArray = [
-            "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
-            "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x",
-            "y", "z"];
-
-        var upperCaseArray = [
-            "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
-            "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
-            "Y", "Z"];
-
-        var numberArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-        var specialArray = ["!", "@", "£", "$", "%", "^", "&", "*"];
-
-
-
-
-        function generateNewPassword() {
-
-            var passwordLength = prompt("Insert number between 8-128 for length of new password");
-
-
-            var lowerCase = confirm("would you like to use lower case letters in your password?");
-
-            if (lowerCase) {
-                alert("lower case letters now being used");
-            }
-            else alert("ok, no problem. how about upper case letters?");
-
-
-            var upperCase = confirm("would you like to use upper case letters in your password?");
-
-            if (upperCase) {
-                alert("upper case letters now being used")
-            }
-            else alert("ok, no problem. how about numbers?")
-
-
-            var numbers = confirm("would you like to use numbers in your password?");
-
-            if (numbers) {
-                alert("numbers now being used")
-            }
-            else alert("ok, no problem. how about special characters?")
-
-            var special = confirm("would you like to use special characters in your password?");
-
-            if (upperCase) {
-                alert("special characters now being used")
-            }
-            else alert("ok, no problem. your random password is now set!")
-
-
-
-
-            if (lowerCase == true && upperCase == true && numbers == true && special == true) {
-                myFunction(array);
-            }
-
-            if (lowerCase == true && upperCase == false && numbers == false && special == false) {
-                myFunction(lowerCaseArray);
-            }
-
-            if (lowerCase == false && upperCase == true && numbers == false && special == false) {
-                myFunction(upperCaseArray);
-            }
-
-            if (lowerCase == false && upperCase == false && numbers == true && special == false) {
-                myFunction(numberArray);
-            }
-
-            if (lowerCase == false && upperCase == false && numbers == false && special == true) {
-                myFunction(specialArray);
-            }
-
-        };
-
-
-
-
-
-        function generatePassword() {
-            var length = 8,
-                charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-                retVal = "";
-            for (var i = 0, n = charset.length; i < length; ++i) {
-                retVal += charset.charAt(Math.floor(Math.random() * n));
-            }
-            return retVal;
-        }
-
-        function myFunction(arrayPick) {
-            document.getElementById("passwordBox").innerHTML = shuffle(arrayPick);
-        }
-
-        function shuffle(array) {
-            var currentIndex = array.length, temporaryValue, randomIndex;
-
-            // While there remain elements to shuffle...
-            while (0 !== currentIndex) {
-
-                // Pick a remaining element...
-                randomIndex = Math.floor(Math.random() * currentIndex);
-                currentIndex -= 1;
-
-                // And swap it with the current element.
-                temporaryValue = array[currentIndex];
-                array[currentIndex] = array[randomIndex];
-                array[randomIndex] = temporaryValue;
-            }
-
-            return array;
-        }
-        console.log(shuffle(array));
-
-
-
-        function clipboard() {
-  /* Get the text field */
-  var copyText = document.getElementById("passwordBox");
-
-  /* Select the text field */
-  copyText.select(); 
-  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-
-  /* Copy the text inside the text field */
-  document.execCommand("copy");
-
-  /* Alert the copied text */
-  alert("Copied the text: " + copyText.value);
-}
-
-    </script>
-
+    <script src="./script.js"></script>
 </body>
 
 </html>
