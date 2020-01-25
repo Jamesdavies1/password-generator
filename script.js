@@ -1,14 +1,11 @@
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
-    // While there remain elements to shuffle...
     while (0 !== currentIndex) {
 
-        // Pick a remaining element...
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
 
-        // And swap it with the current element.
         temporaryValue = array[currentIndex];
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
@@ -86,14 +83,14 @@ function generateNewPassword() {
             alert("lower case letters now being used");
         } else {
             alert("ok, no problem. how about upper case letters?");
-        } 
+        }
 
         var shouldUseUpper = confirm("would you like to use upper case letters in your password?");
 
         if (shouldUseUpper) {
             alert("upper case letters now being used");
         } else {
-            alert("ok, no problem. how about numbers?") ;
+            alert("ok, no problem. how about numbers?");
         }
 
         var shouldUseNums = confirm("would you like to use numbers in your password?");
@@ -102,7 +99,7 @@ function generateNewPassword() {
             alert("numbers now being used");
         } else {
             alert("ok, no problem. how about special characters?");
-        } 
+        }
 
         var shouldUseSpecial = confirm("would you like to use special characters in your password?");
 
@@ -112,109 +109,39 @@ function generateNewPassword() {
             alert("ok, no problem. Let me generate your password!")
         }
 
-        const allowableCharacters = generateAllowableCharacters(shouldUseLower,shouldUseUpper,shouldUseNums,shouldUseSpecial);
-      
-       
+        const allowableCharacters = generateAllowableCharacters(shouldUseLower, shouldUseUpper, shouldUseNums, shouldUseSpecial);
 
         for (let i = 0; i < passwordRequirements.length; i++) {
-            if (shouldUseLower == true && shouldUseUpper == true && shouldUseNums == true && shouldUseSpecial == true ) {
-                generatedPassword.push(getRandomElement(lowerCaseArray+upperCaseArray+numberArray+specialArray))
+            if (shouldUseLower == true && shouldUseUpper == true && shouldUseNums == true && shouldUseSpecial == true) {
+                generatedPassword.push(getRandomElement(lowerCaseArray + upperCaseArray + numberArray + specialArray))
                 const shuffledPassword = shuffle(generatedPassword);
-
                 const shuffledPasswordString = shuffledPassword.join("");
                 displayPassword(shuffledPasswordString);
                 console.log("All true")
-            } else if (shouldUseLower == true && shouldUseUpper == false && shouldUseNums == false && shouldUseSpecial == true ) {
-            
+            } else if (shouldUseLower == true && shouldUseUpper == false && shouldUseNums == false && shouldUseSpecial == true) {
                 console.log("Not all true");
-                // You are going to add something to make sure that
-                // whatever requirements are set are definitely met
             }
 
             else {
                 const tryAgain = "Try Again!"
                 displayPassword(tryAgain);
+            };
+        };
 
-            }
-
-        }
-        // generatedPassword = ["a", "B", "4", "!", "a", 4, 3, 6]
-        
-
-
-        function displayPassword(password){
-
+        function displayPassword(password) {
             document.getElementById("passwordBox").value = '';
             document.getElementById("passwordBox").value = password;
-
-        }
-       
-
-        
-
-
-
-
-        // if (lowerCase == true && upperCase == true && numbers == true && special == true) {
-        //     myFunction(array);
-        // }
-
-        // if (lowerCase == true && upperCase == false && numbers == false && special == false) {
-        //     myFunction(lowerCaseArray);
-        // }
-
-        // if (lowerCase == false && upperCase == true && numbers == false && special == false) {
-        //     myFunction(upperCaseArray);
-        // }
-
-        // if (lowerCase == false && upperCase == false && numbers == true && special == false) {
-        //     myFunction(numberArray);
-        // }
-
-        // if (lowerCase == false && upperCase == false && numbers == false && special == true) {
-        //     myFunction(specialArray);
-        // }
-    }
+        };
+    };
 };
-
-
-
-
-
-// function generatePassword() {
-//     var length = 8,
-//         charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-//         retVal = "";
-//     for (var i = 0, n = charset.length; i < length; ++i) {
-//         retVal += charset.charAt(Math.floor(Math.random() * n));
-//     }
-//     return retVal;
-// }
 
 function myFunction(arrayPick) {
     document.getElementById("passwordBox").innerHTML += shuffle(arrayPick);
 }
 
-// console.log(shuffle(array));
-
-
-
 function clipboard() {
-    /* Get the text field */
     var copyText = document.getElementById("passwordBox");
-
-    /* Select the text field */
     copyText.select();
-    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-
-    /* Copy the text inside the text field */
     document.execCommand("copy");
-
-    /* Alert the copied text */
     alert("Copied the text: " + copyText.value);
-
-    document.execCommand("paste");
-
-
-    
 }

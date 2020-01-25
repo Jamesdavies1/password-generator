@@ -63,12 +63,14 @@ h1, h2, h3{
     background-color: black;
     color: white;
     padding-top: 70px;
+    font-family: 'Geo', sans-serif;
+    font-size: 3em;
+    text-align: center;
 }
 
 .passwordbox::placeholder{
     color: white;
     text-align: center;
-    font-size: 3em;
     font-family: 'Geo', sans-serif;
 }
 
