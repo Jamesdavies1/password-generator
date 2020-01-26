@@ -1,4 +1,4 @@
-**homework - Password Generator
+**homework - Password Generator**
 
 -------------------------------------------
 
@@ -8,7 +8,7 @@ Upon following the live link down below, you will find my application where you 
 
 -------------------------------------------
 
-**Tech used...
+**Tech used...**
 
 - HTML
 - CSS
@@ -18,7 +18,7 @@ Upon following the live link down below, you will find my application where you 
 
 -------------------------------------------
 
-**Getting started...
+**Getting started...**
 
 to get started viewing my portfolio website, please use this link to access the live web page...
 
@@ -28,7 +28,7 @@ https://jamesdavies1.github.io/password-generator/
 
 -------------------------------------------
 
-**Credit
+**Credit**
 
 Thanks to the tutors from trilogy at the manchester university coding bootcamp for providing all i need to carry out this work
 
